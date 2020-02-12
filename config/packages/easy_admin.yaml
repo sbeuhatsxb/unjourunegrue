@@ -1,0 +1,14 @@
+easy_admin:
+#        # List the entity class name you want to manage
+#        - App\Entity\Product
+#        - App\Entity\Category
+    entities:
+        User:
+            class: App\Entity\User
+            controller: App\Controller\Admin\AdminUserController
+
+            new:
+                fields:
+                    - 'email'
+                    - {property: 'password', type: 'password'}
+                    - {property: 'roles', type: 'collection'}
